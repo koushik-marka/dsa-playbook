@@ -1,6 +1,6 @@
 class Solution {
     public boolean isCircularSentence(String s) {
-        String t=s;
+        if(s.charAt(0)!=s.charAt(s.length()-1)) return false;
         int c=0;
         while(s.indexOf(" ")!=-1){
             c++;
@@ -10,7 +10,7 @@ class Solution {
         }
 
         if(c==0 && s.charAt(0)!=s.charAt(s.length()-1)) return false;
-        if(t.charAt(0)!=t.charAt(t.length()-1)) return false;
+        
         return true;
     }
 }
