@@ -1,11 +1,12 @@
 class Solution {
     public boolean checkRecord(String s) {
         if(s.contains("LLL")) return false;
-        int c=0;
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='A') c++;
+        int a=s.indexOf('A');
+        if(a!=s.length()-1){
+            if(s.substring(a+1).indexOf('A')!=-1) return false;
         }
-        if(c>=2) return false;
+        
+        
 
         return true;
     }
