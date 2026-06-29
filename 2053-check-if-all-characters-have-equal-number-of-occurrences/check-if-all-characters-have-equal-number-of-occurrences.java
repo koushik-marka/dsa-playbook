@@ -1,15 +1,12 @@
 class Solution {
     public boolean areOccurrencesEqual(String s) {
-        Map<Character,Integer> fq=new HashMap<>();
-        Integer first=null;
-        for(int i=0;i<s.length();i++){
-            fq.put(s.charAt(i),fq.getOrDefault(s.charAt(i),0)+1);
+        int fq[]=new int[26];
+        for(char ch : s.toCharArray()){
+            fq[ch-'a']++;
         }
-        for(Integer val : fq.values()){
-            if(first==null){
-                first=val;
-            }
-            else if(!val.equals(first)){
+        int a=fq[s.charAt(0)-'a'];
+        for(int i=0;i<s.length();i++){
+            if(fq[s.charAt(i)-'a']!=a){
                 return false;
             }
         }
