@@ -7,7 +7,6 @@ class Solution {
         while(r<nums.length){
             if(nums[r]==0 && t>0){
                 t--;
-                
                 ans=Math.max(r-l+1,ans);
                 r++;
             }
