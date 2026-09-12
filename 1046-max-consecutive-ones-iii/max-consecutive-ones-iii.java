@@ -12,9 +12,13 @@ class Solution {
                 r++;
             }
             else if(nums[r]==0 && t==0){
-                l++;
-                r=l;
-                t=k;
+                if(nums[l]==0){
+                    l++;
+                    t++;
+                }
+                else{
+                    l++;
+                }
             }
             else{
                 ans=Math.max(r-l+1,ans);
