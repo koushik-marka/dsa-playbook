@@ -5,14 +5,13 @@ class Solution {
         Stack<Integer> st=new Stack<>();
         while(j<popped.length ){
             if(!st.empty() && st.peek()==popped[j]){
-                System.out.println("pop "+ st.pop());
-                
+                st.pop();
                 j++;
                 
             }
             else{
                 st.push(pushed[i]);
-                System.out.println(st.peek());
+
                 i++;
             }
             if(!st.empty()&& i==popped.length && st.peek()!=popped[j]){
