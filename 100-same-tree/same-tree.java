@@ -14,13 +14,20 @@
  * }
  */
 class Solution {
+    void pre(ArrayList al,TreeNode p){
+        if(p==null){
+            al.add(null);
+            return;
+        }
+        al.add(p.val);
+        pre(al,p.left);
+        pre(al,p.right);
+    }
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p==null && q==null){
-            return true;
-        }
-        if(p==null || q==null || p.val!=q.val){
-            return false;
-        }
-        return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+        ArrayList<Integer> al1=new ArrayList<>();
+        ArrayList<Integer> al2=new ArrayList<>();
+        pre(al1,p);
+        pre(al2,q);
+        return al1.equals(al2);
     }
 }
