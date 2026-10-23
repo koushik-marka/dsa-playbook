@@ -33,9 +33,9 @@ class Solution {
                 al.add(cur.val);
                 q.poll();
             }
-            ans.add(al);
+            ans.add(0,al);
         }
-        Collections.reverse(ans);
+        
         return ans;
     }
 }
