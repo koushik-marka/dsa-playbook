@@ -29,5 +29,5 @@ class Solution {
         pre(al1,p);
         pre(al2,q);
         return al1.equals(al2);
-    }
+        }
 }
