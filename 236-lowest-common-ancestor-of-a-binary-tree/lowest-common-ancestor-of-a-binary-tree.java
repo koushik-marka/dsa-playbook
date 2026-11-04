@@ -8,17 +8,14 @@
  * }
  */
 class Solution {
-    TreeNode func(TreeNode root, TreeNode p, TreeNode q){
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root==null || root==p || root==q){
             return root;
         }
-        TreeNode l=func(root.left,p,q);
-        TreeNode r=func(root.right,p,q);
+        TreeNode l=lowestCommonAncestor(root.left,p,q);
+        TreeNode r=lowestCommonAncestor(root.right,p,q);
         if(l!=null&&r!=null) return root;
         if(l==null) return r;
         return l;
-    }
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        return func(root,p,q);
     }
 }
