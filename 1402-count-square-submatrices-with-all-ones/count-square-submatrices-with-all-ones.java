@@ -15,19 +15,18 @@ class Solution {
         }
 
         int ans=0;
-        for(int i=1;i<matrix.length;i++){
-            for(int j=1;j<matrix[0].length;j++){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[0].length;j++){
+                
+                if(i==0 || j==0){
+                    ans+=matrix[i][j];
+                    continue;
+                } 
                 if(matrix[i][j]==1){
                     matrix[i][j]=matrix[i][j]+Math.min(Math.min(matrix[i][j-1],matrix[i-1][j]),matrix[i-1][j-1]);
                     ans+=matrix[i][j];
                 }
             }
-        }
-        for(int i=0;i<matrix[0].length;i++){
-            ans+=matrix[0][i];
-        }
-        for(int i=1;i<matrix.length;i++){
-            ans+=matrix[i][0];
         }
         return ans;
     }
