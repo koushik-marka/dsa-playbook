@@ -1,7 +1,7 @@
 class Solution {
     int ans=0;
     void func(int arr[],int t,int idx,int cs){
-        if(cs==t && idx>=arr.length){
+        if(cs==t && idx==arr.length){
             ans++;
             return;
         }
