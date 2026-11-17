@@ -20,10 +20,8 @@ class Solution {
         for(int i =0;i<grid2.length;i++){
             for(int j=0;j<grid2[0].length;j++){
                 issame[0]=true;
-                
                 if(grid2[i][j]==1){
                     dfs(grid1,grid2,i,j,issame);
-                    System.out.println(issame[0]);
                     if(issame[0]) c++;
                 }
             }
