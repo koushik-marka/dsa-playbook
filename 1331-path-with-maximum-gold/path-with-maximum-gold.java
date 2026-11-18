@@ -17,7 +17,10 @@ class Solution {
     public int getMaximumGold(int[][] grid) {
         for(int i=0;i<grid.length;i++){
             for(int j=0;j<grid[0].length;j++){
-                dfs(grid,i,j,0);
+                if(grid[i][j]!=0){
+                    dfs(grid,i,j,0);
+                }
+                
             }
         }
         return ms;
