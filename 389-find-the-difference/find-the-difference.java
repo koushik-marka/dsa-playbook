@@ -4,11 +4,11 @@ class Solution {
         int i=0;
         int j=0;
         while(j<t.length()){
-            ch=ch+t.charAt(j);
+            ch=ch^t.charAt(j);
             j++;
         }
         while(i<s.length()){
-            ch=ch-s.charAt(i);
+            ch=ch^s.charAt(i);
             i++;
         }
         return (char)ch;
